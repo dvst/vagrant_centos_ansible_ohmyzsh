@@ -1,0 +1,22 @@
+3  sudo yum install git
+
+10  curl -O http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
+
+12  sudo rpm -ivh epel-release-7-9.noarch.rpm
+
+14  sudo yum install python-pip
+
+16  sudo pip install git+git://github.com/Lokaltog/powerline
+
+17  curl -O https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+
+19  curl -O https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+
+
+29  sudo yum install fontconfig.x86_64
+
+31  sudo mv PowerlineSymbols.otf /usr/share/fonts/
+
+32  fc-cache -vf /usr/share/fonts/
+
+33  sudo mv -i 10-powerline-symbols.conf /etc/fonts/conf.d/
