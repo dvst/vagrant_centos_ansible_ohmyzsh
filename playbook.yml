@@ -6,5 +6,15 @@
     - name: Install needed packages
       yum: name={{item}} state=present
       with_items:
-        - git
+        - zsh
         - curl
+        - git
+
+    - name: change interpreter of the vagrant user
+      user: name=vagrant shell=/usr/bin/zsh
+
+    - name: Install EPEL repository
+      yum: name=epel-release.noarch state=present
+
+    - name:  install oh-my-zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
